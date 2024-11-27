@@ -6,6 +6,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 // import { GoogleAnalytics } from '@next/third-parties/google'
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
+import { ToastContainer } from "react-toastify";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,6 +23,16 @@ export default function RootLayout({ children }) {
         <Nav />
         {children}
         <Footer />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={true}
+          closeOnClick
+          pauseOnHover
+          theme="dark"
+          toastClassName="bg-gray-800 text-white rounded-lg shadow-lg"
+          bodyClassName="text-sm"
+        />
       </body>
       {
         // <GoogleAnalytics gaId="G-JVKEXR5XSG" />

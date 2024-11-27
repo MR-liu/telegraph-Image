@@ -8,7 +8,7 @@ import {
   faSearchPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ToastContainer } from "react-toastify";
+
 import { toast } from "react-toastify";
 import { useEffect } from "react";
 
@@ -509,8 +509,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <ToastContainer />
         <div className="w-full mt-4 min-h-[200px] mb-[60px] ">
           {uploadedImages.length > 0 && (
             <>
