@@ -374,7 +374,7 @@ export default function Home() {
     <main className="overflow-auto h-full w-full flex flex-col items-center justify-between pt-20 pb-20">
   <div className="mt-12 w-11/12 md:w-4/5 xl:w-3/4">
     <div
-      className="border border-solid border-gray-300 shadow-sm rounded-lg relative"
+      className="border border-solid border-gray-300 shadow-sm rounded-lg relative h-60"
       onDrop={handleDrop}
       onDragOver={handleDragOver}
       onPaste={handlePaste}
@@ -451,7 +451,7 @@ export default function Home() {
         />
       </div>
       <div className="md:col-span-5 col-span-1">
-        <div className="h-12 bg-gray-100 leading-loose px-4 text-center md:text-left shadow">
+        <div className="h-12 bg-gray-100 leading-loose px-4 text-center md:text-left shadow justify-center items-center flex">
           Selected {selectedFiles.length}，Total {getTotalSizeInMB(selectedFiles)} MB
         </div>
       </div>
