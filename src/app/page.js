@@ -44,7 +44,6 @@ export default function Home() {
   const handleClear = () => {
     setSelectedFiles([]);
     setUploadStatus("");
-    // setUploadedImages([]);
   };
 
   const getTotalSizeInMB = (files) => {
@@ -61,7 +60,7 @@ export default function Home() {
     const filesToUpload = file ? [file] : selectedFiles;
 
     if (filesToUpload.length === 0) {
-      toast.error("请选择要上传的文件");
+      toast.error("Please select the file to upload");
       setUploading(false);
       return;
     }
@@ -105,43 +104,43 @@ export default function Home() {
             let errorMsg;
             try {
               const errorData = await response.json();
-              errorMsg = errorData.message || `上传 ${file.name} 图片时出错`;
+              errorMsg = errorData.message || `Error uploading ${file. name} image`;
             } catch (jsonError) {
               // 如果解析 JSON 失败，使用默认错误信息
-              errorMsg = `上传 ${file.name} 图片时发生未知错误`;
+              errorMsg = `Unknown error occurred while uploading ${file. name} image`;
             }
 
             // 细化状态码处理
             switch (response.status) {
               case 400:
-                toast.error(`请求无效: ${errorMsg}`);
+                toast.error(`Request is invalid: ${errorMsg}`);
                 break;
               case 403:
-                toast.error(`无权限访问资源: ${errorMsg}`);
+                toast.error(`Unauthorized access to resources: ${errorMsg}`);
                 break;
               case 404:
-                toast.error(`资源未找到: ${errorMsg}`);
+                toast.error(`Resource not found: ${errorMsg}`);
                 break;
               case 500:
-                toast.error(`服务器错误: ${errorMsg}`);
+                toast.error(`Server error: ${errorMsg}`);
                 break;
               case 401:
-                toast.error(`未授权: ${errorMsg}`);
+                toast.error(`unauthorized: ${errorMsg}`);
                 break;
               default:
-                toast.error(`上传 ${file.name} 图片时出错: ${errorMsg}`);
+                toast.error(`Error uploading ${file. name} image: ${errorMsg}`);
             }
           }
         } catch (error) {
-          toast.error(`上传 ${file.name} 图片时出错`);
+          toast.error(`Error uploading ${file. name} image`);
         }
       }
 
       setUploadedFilesNum(uploadedFilesNum + successCount);
-      toast.success(`已成功上传 ${successCount} 张图片`);
+      toast.success(`Successfully uploaded ${successCount} images`);
     } catch (error) {
-      console.error("上传过程中出现错误:", error);
-      toast.error("上传错误");
+      console.error("An error occurred during the upload process:", error);
+      toast.error("upload error");
     } finally {
       setUploading(false);
     }
@@ -155,7 +154,7 @@ export default function Home() {
       if (item.kind === "file" && item.type.includes("image")) {
         const file = item.getAsFile();
         setSelectedFiles([...selectedFiles, file]);
-        break; // 只处理第一个文件
+        break;
       }
     }
   };
@@ -207,10 +206,9 @@ export default function Home() {
   const handleCopy = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
-      // alert('已成功复制到剪贴板');
-      toast.success(`链接复制成功`);
+      toast.success(`Link copied successfully`);
     } catch (err) {
-      toast.error("链接复制失败");
+      toast.error("Link copying failed");
     }
   };
 
@@ -219,9 +217,9 @@ export default function Home() {
     const values = Array.from(codeElements).map((code) => code.textContent);
     try {
       await navigator.clipboard.writeText(values.join("\n"));
-      toast.success(`链接复制成功`);
+      toast.success(`Link copied successfully`);
     } catch (error) {
-      toast.error(`链接复制失败\n${error}`);
+      toast.error(`Link copying failed\n${error}`);
     }
   };
 
@@ -440,7 +438,7 @@ export default function Home() {
             {selectedFiles.length === 0 && (
               <div className="absolute -z-10 left-0 top-0 w-full h-full flex items-center justify-center">
                 <div className="text-gray-500">
-                  拖拽文件到这里或将屏幕截图复制并粘贴到此处上传
+                  Drag and drop files here or copy and paste screenshots here to upload
                 </div>
               </div>
             )}
@@ -457,7 +455,7 @@ export default function Home() {
                 style={{ width: "20px", height: "20px" }}
                 className="mr-2"
               />
-              选择图片
+              Select
             </label>
             <input
               id="file-upload"
@@ -469,7 +467,7 @@ export default function Home() {
           </div>
           <div className="md:col-span-5 col-span-8">
             <div className="w-full h-10 bg-slate-200 leading-10 px-4 text-center md:text-left">
-              已选择 {selectedFiles.length} 张，共{" "}
+              Selected {selectedFiles.length}，Total{" "}
               {getTotalSizeInMB(selectedFiles)} M
             </div>
           </div>
@@ -483,7 +481,7 @@ export default function Home() {
                 style={{ width: "20px", height: "20px" }}
                 className="mr-2"
               />
-              清除
+              Clear
             </div>
           </div>
           <div className="md:col-span-1 col-span-5">
@@ -498,10 +496,13 @@ export default function Home() {
                 style={{ width: "20px", height: "20px" }}
                 className="mr-2"
               />
-              上传
+              Upload
             </div>
           </div>
         </div>
+        {
+          // ---------
+        }
         <div className="w-full mt-4 min-h-[200px] mb-[60px] ">
           {uploadedImages.length > 0 && (
             <>
@@ -592,12 +593,10 @@ export default function Home() {
                 controls
               />
             ) : boxType === "other" ? (
-              // 这里可以渲染你想要的其他内容或组件
               <div className="p-4 bg-white text-black rounded">
                 <p>Unsupported file type</p>
               </div>
             ) : (
-              // 你可以选择一个默认的内容或者返回 null
               <div>未知类型</div>
             )}
           </div>
