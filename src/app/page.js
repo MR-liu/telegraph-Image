@@ -104,10 +104,11 @@ export default function Home() {
             let errorMsg;
             try {
               const errorData = await response.json();
-              errorMsg = errorData.message || `Error uploading ${file. name} image`;
+              errorMsg =
+                errorData.message || `Error uploading ${file.name} image`;
             } catch (jsonError) {
               // 如果解析 JSON 失败，使用默认错误信息
-              errorMsg = `Unknown error occurred while uploading ${file. name} image`;
+              errorMsg = `Unknown error occurred while uploading ${file.name} image`;
             }
 
             // 细化状态码处理
@@ -128,11 +129,11 @@ export default function Home() {
                 toast.error(`unauthorized: ${errorMsg}`);
                 break;
               default:
-                toast.error(`Error uploading ${file. name} image: ${errorMsg}`);
+                toast.error(`Error uploading ${file.name} image: ${errorMsg}`);
             }
           }
         } catch (error) {
-          toast.error(`Error uploading ${file. name} image`);
+          toast.error(`Error uploading ${file.name} image`);
         }
       }
 
@@ -372,168 +373,178 @@ export default function Home() {
 
   return (
     <main className="overflow-auto h-full w-full flex flex-col items-center justify-between pt-20 pb-20">
-  <div className="mt-12 w-11/12 md:w-4/5 xl:w-3/4">
-    <div
-      className="border border-solid border-gray-300 shadow-sm rounded-lg relative h-80"
-      onDrop={handleDrop}
-      onDragOver={handleDragOver}
-      onPaste={handlePaste}
-      style={{ minHeight: calculateMinHeight() }}
-    >
-      <div className="p-4 grid grid-cols-2 md:grid-cols-3 gap-4">
-        <LoadingOverlay loading={uploading} />
-        {selectedFiles.map((file, index) => (
-          <div
-            key={index}
-            className="relative rounded-lg ring-offset-2 ring-1 ring-gray-300 overflow-hidden"
-          >
-            <div className="aspect-w-1 aspect-h-1 h-60">
-              {file.type.startsWith("image/") && (
-                <Image
-                  src={URL.createObjectURL(file)}
-                  alt={`Preview ${file.name}`}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              )}
-              {file.type.startsWith("video/") && (
-                <video
-                  src={URL.createObjectURL(file)}
-                  controls
-                  className="w-full h-full"
-                />
-              )}
-              {!file.type.startsWith("image/") &&
-                !file.type.startsWith("video/") && (
-                  <div className="flex items-center justify-center w-full h-full bg-gray-100 text-gray-500">
-                    <p>{file.name}</p>
-                  </div>
-                )}
-            </div>
-            <div className="flex items-center justify-around p-2 bg-white">
-              <button className="text-blue-600 hover:text-blue-800" onClick={() => handleImageClick(index)}>
-                <FontAwesomeIcon icon={faSearchPlus} />
-              </button>
-              <button className="text-red-600 hover:text-red-800" onClick={() => handleRemoveImage(index)}>
-                <FontAwesomeIcon icon={faTrashAlt} />
-              </button>
-              <button className="text-green-600 hover:text-green-800" onClick={() => handleUpload(file)}>
-                <FontAwesomeIcon icon={faUpload} />
-              </button>
-            </div>
-          </div>
-        ))}
-
-        {selectedFiles.length === 0 && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-gray-400">
-              Drag and drop files here or paste screenshots here to upload
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-    <div className="w-full mt-4 grid grid-cols-1 md:grid-cols-8 gap-4">
-      <div className="md:col-span-1 col-span-1">
-        <label
-          htmlFor="file-upload"
-          className="block w-full h-12 bg-blue-600 cursor-pointer flex justify-center items-center text-white rounded-lg shadow"
-        >
-          <FontAwesomeIcon icon={faImages} className="mr-2" />
-          Select
-        </label>
-        <input
-          id="file-upload"
-          type="file"
-          className="hidden"
-          onChange={handleFileChange}
-          multiple
-        />
-      </div>
-      <div className="md:col-span-5 col-span-1">
-        <div className="h-12 bg-gray-100 leading-loose px-4 text-center md:text-left shadow justify-center items-center flex">
-          Selected {selectedFiles.length}，Total {getTotalSizeInMB(selectedFiles)} MB
-        </div>
-      </div>
-      <div className="md:col-span-1 col-span-1">
-        <div className="h-12 bg-red-600 cursor-pointer flex justify-center items-center text-white rounded-lg shadow" onClick={handleClear}>
-          <FontAwesomeIcon icon={faTrashAlt} />
-          Clear
-        </div>
-      </div>
-      <div className="md:col-span-1 col-span-1">
+      <div className="mt-12 w-11/12 md:w-4/5 xl:w-3/4">
         <div
-          className={`h-12 bg-green-600 cursor-pointer flex justify-center items-center text-white rounded-lg shadow ${
-            uploading ? "pointer-events-none opacity-50" : ""
-          }`}
-          onClick={() => handleUpload()}
+          className="border border-solid border-gray-300 shadow-sm rounded-lg relative h-72"
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+          onPaste={handlePaste}
+          onClick={() => document.getElementById('file-upload').click()}
+          style={{ minHeight: calculateMinHeight() }}
         >
-          <FontAwesomeIcon icon={faUpload} />
-          Upload
+          <div className="p-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+            <LoadingOverlay loading={uploading} />
+            {selectedFiles.map((file, index) => (
+              <div
+                key={index}
+                className="relative rounded-lg ring-offset-2 ring-1 ring-gray-300 overflow-hidden"
+              >
+                <div className="aspect-w-1 aspect-h-1 h-60">
+                  {file.type.startsWith("image/") && (
+                    <Image
+                      src={URL.createObjectURL(file)}
+                      alt={`Preview ${file.name}`}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  )}
+                  {file.type.startsWith("video/") && (
+                    <video
+                      src={URL.createObjectURL(file)}
+                      controls
+                      className="w-full h-full"
+                    />
+                  )}
+                  {!file.type.startsWith("image/") &&
+                    !file.type.startsWith("video/") && (
+                      <div className="flex items-center justify-center w-full h-full bg-gray-100 text-gray-500">
+                        <p>{file.name}</p>
+                      </div>
+                    )}
+                </div>
+                <div className="flex items-center justify-around p-2 bg-white">
+                  <button
+                    className="text-blue-600 hover:text-blue-800"
+                    onClick={() => handleImageClick(index)}
+                  >
+                    <FontAwesomeIcon icon={faSearchPlus} />
+                  </button>
+                  <button
+                    className="text-red-600 hover:text-red-800"
+                    onClick={() => handleRemoveImage(index)}
+                  >
+                    <FontAwesomeIcon icon={faTrashAlt} />
+                  </button>
+                  <button
+                    className="text-green-600 hover:text-green-800"
+                    onClick={() => handleUpload(file)}
+                  >
+                    <FontAwesomeIcon icon={faUpload} />
+                  </button>
+                </div>
+              </div>
+            ))}
+
+            {selectedFiles.length === 0 && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-gray-400">
+                  Drag and drop files here or paste screenshots here to upload
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="w-full mt-4 grid grid-cols-1 md:grid-cols-8 gap-4">
+        <input
+        id="file-upload"
+        type="file"
+        className="hidden"
+        onChange={handleFileChange}
+        multiple
+      />
+          <div className="md:col-span-6 col-span-2">
+            <div className="h-12 bg-gray-100 leading-loose px-4 text-center md:text-left shadow justify-center items-center flex">
+              Selected {selectedFiles.length}，Total{" "}
+              {getTotalSizeInMB(selectedFiles)} MB
+            </div>
+          </div>
+          <div className="md:col-span-1 col-span-1">
+            <div
+              className="h-12 bg-red-600 cursor-pointer flex justify-center items-center text-white rounded-lg shadow"
+              onClick={handleClear}
+            >
+              <FontAwesomeIcon icon={faTrashAlt} />
+              Clear
+            </div>
+          </div>
+          <div className="md:col-span-1 col-span-1">
+            <div
+              className={`h-12 bg-green-600 cursor-pointer flex justify-center items-center text-white rounded-lg shadow ${
+                uploading ? "pointer-events-none opacity-50" : ""
+              }`}
+              onClick={() => handleUpload()}
+            >
+              <FontAwesomeIcon icon={faUpload} />
+              Upload
+            </div>
+          </div>
+        </div>
+        <div className="w-full mt-4">
+          {uploadedImages.length > 0 && (
+            <div className="flex flex-wrap gap-3 mb-4 border-b border-gray-300">
+              {[
+                "preview",
+                "htmlLinks",
+                "markdownLinks",
+                "bbcodeLinks",
+                "viewLinks",
+              ].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-4 py-2 ${
+                    activeTab === tab
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-200 text-gray-800"
+                  }`}
+                >
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              ))}
+            </div>
+          )}
+          {renderTabContent()}
         </div>
       </div>
-    </div>
-    <div className="w-full mt-4">
-      {uploadedImages.length > 0 && (
-        <div className="flex flex-wrap gap-3 mb-4 border-b border-gray-300">
-          {['preview', 'htmlLinks', 'markdownLinks', 'bbcodeLinks', 'viewLinks'].map(tab => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 ${
-                activeTab === tab
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-gray-800"
-              }`}
-            >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </button>
-          ))}
-        </div>
-      )}
-      {renderTabContent()}
-    </div>
-  </div>
-  {selectedImage && (
-    <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-      onClick={handleCloseImage}
-    >
-      <div className="relative flex flex-col items-center justify-between">
+      {selectedImage && (
         <button
-          className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
           onClick={handleCloseImage}
         >
-          &times;
-        </button>
+          <div className="relative flex flex-col items-center justify-between">
+            <button
+              className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center"
+              onClick={handleCloseImage}
+            >
+              &times;
+            </button>
 
-        {boxType === "img" ? (
-          <img
-            src={selectedImage}
-            alt="Selected"
-            width={500}
-            height={500}
-            className="object-cover w-9/10 h-auto rounded-lg"
-          />
-        ) : boxType === "video" ? (
-          <video
-            src={selectedImage}
-            width={500}
-            height={500}
-            className="object-cover w-9/10 h-auto rounded-lg"
-            controls
-          />
-        ) : boxType === "other" ? (
-          <div className="p-4 bg-white text-black rounded">
-            <p>Unsupported file type</p>
+            {boxType === "img" ? (
+              <img
+                src={selectedImage}
+                alt="Selected"
+                width={500}
+                height={500}
+                className="object-cover w-9/10 h-auto rounded-lg"
+              />
+            ) : boxType === "video" ? (
+              <video
+                src={selectedImage}
+                width={500}
+                height={500}
+                className="object-cover w-9/10 h-auto rounded-lg"
+                controls
+              />
+            ) : boxType === "other" ? (
+              <div className="p-4 bg-white text-black rounded">
+                <p>Unsupported file type</p>
+              </div>
+            ) : (
+              <div>Unknown type</div>
+            )}
           </div>
-        ) : (
-          <div>Unknown type</div>
-        )}
-      </div>
-    </div>
-  )}
-</main>
-
+        </button>
+      )}
+    </main>
   );
 }
