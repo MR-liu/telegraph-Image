@@ -374,7 +374,7 @@ export default function Home() {
     <main className="overflow-auto h-full w-full flex flex-col items-center justify-between pt-20 pb-20">
   <div className="mt-12 w-11/12 md:w-4/5 xl:w-3/4">
     <div
-      className="border border-solid border-gray-300 shadow-sm rounded-lg relative h-60"
+      className="border border-solid border-gray-300 shadow-sm rounded-lg relative h-80"
       onDrop={handleDrop}
       onDragOver={handleDragOver}
       onPaste={handlePaste}
@@ -387,7 +387,7 @@ export default function Home() {
             key={index}
             className="relative rounded-lg ring-offset-2 ring-1 ring-gray-300 overflow-hidden"
           >
-            <div className="aspect-w-1 aspect-h-1">
+            <div className="aspect-w-1 aspect-h-1 h-60">
               {file.type.startsWith("image/") && (
                 <Image
                   src={URL.createObjectURL(file)}
