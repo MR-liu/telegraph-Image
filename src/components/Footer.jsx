@@ -10,7 +10,7 @@ export default function Footer() {
           <img
             src="/img/logo_a.png"
             alt="Logo"
-            className="w-24 h-24 md:w-24 md:h-24"
+            className="w-24 h-24 md:w-24 md:h-24 mb-5"
           />
           <p className="text-gray-400 text-center md:text-left text-sm">
             OrangeThink offers reliable and secure image hosting solutions
@@ -89,11 +89,11 @@ export default function Footer() {
         </div>
 
         {/* Contact Information */}
-        <div className="flex flex-col items-center md:items-start space-y-4">
-          <h3 className="text-lg font-bold text-white">Contact Us</h3>
-          <p className="text-gray-400">Email: support@imagecloud.us.kg</p>
-          <p className="text-gray-400">Phone: +1 (919) 886-5660</p>
-          <div className="flex space-x-4 mt-4">
+        <div className="flex flex-col items-center md:items-start">
+          <h3 className="text-lg font-bold text-white pb-6">Contact Us</h3>
+          <div className="text-gray-400">Email: support@imagecloud.us.kg</div>
+          <div className="text-gray-400 mt-2">Phone: +1 (919) 886-5660</div>
+          <div className="flex space-x-4 pt-8">
             <a
               href="https://facebook.com"
               target="_blank"
