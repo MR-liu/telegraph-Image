@@ -1,5 +1,5 @@
 // import logo from "../assets/images/logo-2000.png";
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,10 +7,16 @@ export default function Footer() {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo and Description */}
         <div className="flex flex-col items-center md:items-start">
-        <img src="/img/logo.png" alt="Logo" className="w-10 h-10 md:w-12 md:h-12" />
-          <p className="text-gray-400 text-center md:text-left">
-            OrangeThink Shopping Hub - Your one-stop destination for curated
-            shopping collections.
+          <img
+            src="/img/logo_a.png"
+            alt="Logo"
+            className="w-24 h-24 md:w-24 md:h-24"
+          />
+          <p className="text-gray-400 text-center md:text-left text-sm">
+            OrangeThink offers reliable and secure image hosting solutions
+            designed for individuals and businesses. Enjoy fast upload speeds,
+            easy management, and sharing capabilities. Ideal for photographers,
+            designers, and anyone in need of high-quality image storage.
           </p>
         </div>
 
@@ -20,7 +26,7 @@ export default function Footer() {
           <ul className="space-y-2">
             <li>
               <Link
-                href="/privacy"
+                href="/privacyPolicy"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 Privacy Policy
@@ -28,7 +34,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-              href="/terms"
+                href="/terms"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 Terms of Service
@@ -36,7 +42,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-              href="/disclaimer"
+                href="/disclaimer"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 Disclaimer
@@ -44,30 +50,49 @@ export default function Footer() {
             </li>
             <li>
               <Link
-              href="/contact"
+                href="/contact"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 Contact Us
               </Link>
             </li>
             <li>
-            <a
-            href="https://sitenavigation.ggff.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors"
-          >
-            Navigation Site
-          </a>
-          </li>
+              <a
+                href="https://sitenavigation.ggff.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
+                Navigation Site
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.shopslinker.com/"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
+                Shop Navigator
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://novels-cats.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
+                Novel-Cats
+              </a>
+            </li>
           </ul>
         </div>
 
         {/* Contact Information */}
         <div className="flex flex-col items-center md:items-start space-y-4">
           <h3 className="text-lg font-bold text-white">Contact Us</h3>
-          <p className="text-gray-400">Email: support@orangethink.com</p>
-          <p className="text-gray-400">Phone: +1 (123) 456-7890</p>
+          <p className="text-gray-400">Email: support@imagecloud.us.kg</p>
+          <p className="text-gray-400">Phone: +1 (919) 886-5660</p>
           <div className="flex space-x-4 mt-4">
             <a
               href="https://facebook.com"

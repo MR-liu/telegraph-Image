@@ -372,7 +372,7 @@ export default function Home() {
   };
 
   return (
-    <main className="overflow-auto h-full w-full flex flex-col items-center justify-between pt-20 pb-20">
+    <main className="overflow-auto h-full w-full flex flex-col items-center justify-between pt-4 pb-20">
       <div className="mt-12 w-11/12 md:w-4/5 xl:w-3/4">
         <div
           className="border border-solid border-gray-300 shadow-sm rounded-lg relative h-72"

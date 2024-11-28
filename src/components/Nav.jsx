@@ -10,33 +10,12 @@ const Nav = () => {
 
   // 获取当前路径
   const pathname = usePathname();
-
-  // 根据路径动态设置背景和按钮颜色
-  const backgroundConfig = {
-    "/": {
-      bgClass: "bg-gradient-to-r from-blue-500 to-purple-600",
-      btnClass: "bg-gradient-to-r from-blue-500 to-purple-600",
-      title: "OrangeThink Shopping Hub",
-      subtitle: "Your one-stop destination for curated shopping collections",
-    },
-    "/navigation": {
-      bgClass: "bg-gradient-to-r from-green-600 to-teal-500",
-      btnClass: "bg-gradient-to-r from-green-600 to-teal-500",
-      title: "Site Navigation Hub",
-      subtitle: "Explore curated websites and categories",
-    },
-    "/independent": {
-      bgClass: "bg-gradient-to-r from-yellow-600 to-orange-600",
-      btnClass: "bg-gradient-to-r from-yellow-600 to-orange-600",
-      title: "Independent Sites Hub",
-      subtitle: "Discover the best independent stores and brands",
-    },
+  const currentConfig = {
+    bgClass: "bg-gradient-to-r from-pink-500 to-orange-500",
+    btnClass: "bg-gradient-to-r from-pink-500 to-orange-500",
+    title: "OrangeThink Image Hosting",
+    subtitle: "Secure and Fast Hosting for All Your Images",
   };
-
-  // 默认主页背景配置
-  const currentConfig =
-    backgroundConfig[pathname] ||
-    backgroundConfig["/independent"];
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
@@ -57,18 +36,9 @@ const Nav = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6 text-lg">
-          <Link href="/" className="hover:text-blue-200 transition">
+          <a href="https://www.shopslinker.com/" className="hover:text-blue-200 transition">
             Shop Navigator
-          </Link>
-          <Link href="/navigation" className="hover:text-blue-200 transition">
-            Site Directory
-          </Link>
-          <Link href="/about" className="hover:text-blue-200 transition">
-            About
-          </Link>
-          <Link href="/contact" className="hover:text-blue-200 transition">
-            Contact Us
-          </Link>
+          </a>
           <a
             href="https://novels-cats.com"
             target="_blank"
@@ -77,6 +47,12 @@ const Nav = () => {
           >
             Novel-Cats
           </a>
+          <Link href="/about" className="hover:text-blue-200 transition">
+            About
+          </Link>
+          <Link href="/contact" className="hover:text-blue-200 transition">
+            Contact Us
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
