@@ -389,7 +389,7 @@ export default function Home() {
                 key={index}
                 className="relative rounded-lg ring-offset-2 ring-1 ring-gray-300 overflow-hidden"
               >
-                <div className="aspect-w-1 aspect-h-1 h-60">
+                <div className="aspect-w-1 aspect-h-1 h-52 overflow-hidden">
                   {file.type.startsWith("image/") && (
                     <Image
                       src={URL.createObjectURL(file)}
