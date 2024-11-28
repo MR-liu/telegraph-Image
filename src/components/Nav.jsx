@@ -26,8 +26,16 @@ const Nav = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="https://orangethink.com.hk/" target="_blank" rel="noopener noreferrer">
-            <img src="/img/logo.png" alt="Logo" className="w-10 h-10 md:w-12 md:h-12" />
+          <a
+            href="https://orangethink.com.hk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/img/logo.png"
+              alt="Logo"
+              className="w-10 h-10 md:w-12 md:h-12"
+            />
           </a>
           <h1 className="ml-3 text-xl md:text-2xl font-bold">
             <Link href="/">Image Cloud</Link>
@@ -36,7 +44,12 @@ const Nav = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6 text-lg">
-          <a href="https://www.shopslinker.com/" className="hover:text-blue-200 transition">
+          <a
+            href="https://www.shopslinker.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-200 transition"
+          >
             Shop Navigator
           </a>
           <a
@@ -99,23 +112,38 @@ const Nav = () => {
           <Link href="/" className="block hover:text-blue-200 transition">
             Shop Navigator
           </Link>
-          <Link href="/navigation" className="block hover:text-blue-200 transition">
-            Site Directory
-          </Link>
-          <Link href="/about" className="block hover:text-blue-200 transition">
-            About
-          </Link>
-          <Link href="/contact" className="block hover:text-blue-200 transition">
-            Contact Us
-          </Link>
+          <a
+            href="https://www.shopslinker.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block hover:text-blue-200 transition"
+          >
+            Shop Navigator
+          </a>
           <a
             href="https://novels-cats.com"
             target="_blank"
             rel="noopener noreferrer"
             className="block hover:text-blue-200 transition"
           >
-            Novel-Cats
+            Free Novels
           </a>
+          <Link
+            href="/navigation"
+            className="block hover:text-blue-200 transition"
+          >
+            Site Directory
+          </Link>
+          <Link href="/about" className="block hover:text-blue-200 transition">
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className="block hover:text-blue-200 transition"
+          >
+            Contact Us
+          </Link>
+          
         </div>
       )}
     </nav>

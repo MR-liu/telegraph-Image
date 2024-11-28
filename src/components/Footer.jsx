@@ -58,6 +58,16 @@ export default function Footer() {
             </li>
             <li>
               <a
+                href="https://novels-cats.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
+                Novel-Cats
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://sitenavigation.ggff.net/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,18 +81,10 @@ export default function Footer() {
               <a
                 href="https://www.shopslinker.com/"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
-              >
-                Shop Navigator
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://novels-cats.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
               >
-                Novel-Cats
+                Shop Navigator
               </a>
             </li>
           </ul>
