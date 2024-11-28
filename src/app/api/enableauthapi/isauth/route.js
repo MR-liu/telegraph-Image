@@ -1,6 +1,6 @@
 
 export const runtime = 'edge';
-import { auth } from "@/auth";
+import { auth } from "../../../../auth";
 
 export async function GET(request) {
 

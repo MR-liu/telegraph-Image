@@ -1,4 +1,4 @@
-import { auth } from "@/auth";
+import { auth } from "../../auth";
 import { LoginPage } from "../../components/SignIn";
 import { redirect } from "next/navigation";
 
