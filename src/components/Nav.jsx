@@ -45,7 +45,7 @@ const Nav = () => {
             rel="noopener noreferrer"
             className="hover:text-blue-200 transition"
           >
-            Novel-Cats
+            Free Novels
           </a>
           <Link href="/about" className="hover:text-blue-200 transition">
             About
