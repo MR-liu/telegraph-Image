@@ -463,7 +463,7 @@ export default function Home() {
               className="h-12 bg-red-600 cursor-pointer flex justify-center items-center text-white rounded-lg shadow"
               onClick={handleClear}
             >
-              <FontAwesomeIcon icon={faTrashAlt} />
+              <FontAwesomeIcon className="h-4 mr-2" icon={faTrashAlt} />
               Clear
             </div>
           </div>
@@ -474,7 +474,7 @@ export default function Home() {
               }`}
               onClick={() => handleUpload()}
             >
-              <FontAwesomeIcon icon={faUpload} />
+              <FontAwesomeIcon className="h-4 mr-2" icon={faUpload} />
               Upload
             </div>
           </div>
