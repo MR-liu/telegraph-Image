@@ -30,7 +30,7 @@ const Nav = () => {
             <img src="/img/logo.png" alt="Logo" className="w-10 h-10 md:w-12 md:h-12" />
           </a>
           <h1 className="ml-3 text-xl md:text-2xl font-bold">
-            <Link href="/">SHOPS LINKER</Link>
+            <Link href="/">Image Cloud</Link>
           </h1>
         </div>
 
