@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Switcher from '@/components/SwitchButton';
+import Switcher from '../components/SwitchButton';
 import { toast } from "react-toastify";
 import React, { useRef } from 'react';
-import TooltipItem from '@/components/Tooltip';
-import FullScreenIcon from "@/components/FullScreenIcon"
+import TooltipItem from '../components/Tooltip';
+import FullScreenIcon from "../components/FullScreenIcon"
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 export default function Table({ data: initialData = [] }) {

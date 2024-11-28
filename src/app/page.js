@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { toast } from "react-toastify";
-import LoadingOverlay from "@/components/LoadingOverlay";
+import LoadingOverlay from "../components/LoadingOverlay";
 
 export default function Home() {
   const [selectedFiles, setSelectedFiles] = useState([]);

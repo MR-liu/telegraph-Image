@@ -1,6 +1,6 @@
 'use client'
 import { signOut } from "next-auth/react"
-import Table from "@/components/Table"
+import Table from "../../components/Table"
 import { useState, useEffect, useCallback } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import Link from 'next/link'

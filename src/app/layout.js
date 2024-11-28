@@ -4,9 +4,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-toastify/ReactToastify.min.css';
 import 'react-photo-view/dist/react-photo-view.css';
 // import { GoogleAnalytics } from '@next/third-parties/google'
-import Footer from "@/components/Footer";
-import Nav from "@/components/Nav";
-import Header from "@/components/Header";
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+import Header from "../components/Header";
 
 import { ToastContainer } from "react-toastify";
 
